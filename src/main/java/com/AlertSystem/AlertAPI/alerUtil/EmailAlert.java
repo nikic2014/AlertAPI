@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 public class EmailAlert {
     public void sendEmail(String to, String subject, String body) {
         final String username = "nikita2324ew@gmail.com";
-        final String password = "fcri fhla whvo hqvo";
+        final String password = "";
 
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
