@@ -4,13 +4,20 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 @Component
+@PropertySource("classpath:application.properties")
 public class EmailAlert {
+
+    @Value("${email-password}")
+    private String password;
+
     public void sendEmail(String to, String subject, String body) {
         final String username = "nikita2324ew@gmail.com";
-        final String password = "";
+        final String password = this.password;
 
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");

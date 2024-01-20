@@ -20,7 +20,7 @@ public class Project {
     @Column(name = "slackLink")
     private String slackLink;
     @Column(name = "emailTeamLead")
-    private String emailTeamLead;
+    private String emailTeamLead;   
 
     public Project(){
     }

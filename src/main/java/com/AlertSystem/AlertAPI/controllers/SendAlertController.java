@@ -3,8 +3,6 @@ package com.AlertSystem.AlertAPI.controllers;
 
 import com.AlertSystem.AlertAPI.alerUtil.Alerter;
 import com.AlertSystem.AlertAPI.alerUtil.EmailAlert;
-import com.AlertSystem.AlertAPI.alerUtil.SmsAlert;
-import com.AlertSystem.AlertAPI.alerUtil.TelegramAlert;
 import com.AlertSystem.AlertAPI.dto.AlertDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

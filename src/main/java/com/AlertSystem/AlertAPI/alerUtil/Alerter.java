@@ -103,7 +103,7 @@ public class Alerter {
                            List<People> peopleList) throws Exception {
         String tgLinksPeople = "";
         for(var i:peopleList){
-            tgLinksPeople += i.getTgLink();
+            tgLinksPeople += i.getTgLink() + " ";
         }
         message = "For: " + tgLinksPeople + "\n" + message;
 

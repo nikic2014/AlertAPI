@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.web.ServerProperties;
 import org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @SpringBootApplication
 public class AlertApiApplication {
@@ -23,5 +24,9 @@ public class AlertApiApplication {
 	@Bean
 	public HttpEncodingAutoConfiguration httpEncodingAutoConfiguration(ServerProperties serverProperties) {
 		return new HttpEncodingAutoConfiguration(serverProperties);
+	}
+	@Bean
+	public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
+		return new PropertySourcesPlaceholderConfigurer();
 	}
 }

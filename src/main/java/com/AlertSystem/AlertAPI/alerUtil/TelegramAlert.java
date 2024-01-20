@@ -34,7 +34,7 @@ public class TelegramAlert {
 
     private void sendKafkaMessage(String chatId, String Message) throws JsonProcessingException {
         Properties properties = new Properties();
-        properties.put("bootstrap.servers", "localhost:9092");
+        properties.put("bootstrap.servers", "kafka:9092");
         properties.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         properties.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 
