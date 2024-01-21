@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main # Замените на имя вашей основной ветки
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
