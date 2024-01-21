@@ -12,10 +12,13 @@ public class People {
 
     @Column(name = "login")
     private String login;
+
     @Column(name = "password")
     private String password;
+
     @Column(name = "email")
     private String email;
+
     @Column(name = "telephone")
     private String telephone;
 
@@ -30,7 +33,7 @@ public class People {
         this.tgLink = tgLink;
     }
 
-    public People(){};
+    public People(){}
 
     public int getId() {
         return id;

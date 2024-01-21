@@ -1,0 +1,24 @@
+name: PMD Check
+
+on:
+  push:
+    branches:
+      - main # Замените на имя вашей основной ветки
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up JDK
+      uses: actions/setup-java@v2
+      with:
+        distribution: 'adopt'
+        java-version: '11' # Можете изменить на версию JDK, которую используете
+
+    - name: Build and Run PMD
+      run: |
+        mvn verify

@@ -55,7 +55,43 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<version>3.21.2</version>
+				<executions>
+					<execution>
+						<phase>verify</phase>
+						<goals>
+							<goal>pmd</goal>
+							<goal>cpd</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+<!--			<plugin>-->
+<!--				<groupId>org.apache.maven.plugins</groupId>-->
+<!--				<artifactId>maven-checkstyle-plugin</artifactId>-->
+<!--				<version>3.2.0</version>-->
+<!--				<configuration>-->
+<!--					<configLocation>checkstyle.xml</configLocation>-->
+<!--					<sourceDirectories>-->
+<!--						<sourceDirectory>/src/main/java/com-->
+<!--							/AlertSystem/AlertAPI</sourceDirectory>-->
+<!--						&lt;!&ndash; Добавьте дополнительные директории по необходимости &ndash;&gt;-->
+<!--					</sourceDirectories>-->
+<!--				</configuration>-->
+<!--				<executions>-->
+<!--					<execution>-->
+<!--						<phase>validate</phase>-->
+<!--						<goals>-->
+<!--							<goal>check</goal>-->
+<!--						</goals>-->
+<!--					</execution>-->
+<!--				</executions>-->
+<!--			</plugin>-->
 		</plugins>
 	</build>
+
 
 </project>

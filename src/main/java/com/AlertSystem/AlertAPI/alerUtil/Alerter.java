@@ -15,9 +15,7 @@ import java.util.List;
 public class Alerter {
     private final SmsAlert smsAlert;
     private final TelegramAlert telegramAlert;
-
     private final EmailAlert emailAlert;
-
     private final ProjectService projectService;
     private final PeopleService peopleService;
     private final PeopleInProjectService peopleInProjectService;
@@ -36,12 +34,6 @@ public class Alerter {
         this.peopleInProjectService = peopleInProjectService;
     }
 
-
-
-    public enum Level {
-        email, telegram, sms
-    }
-
     public void sendAlert(int idProject,
                           String alertType,
                           String message,
@@ -50,8 +42,9 @@ public class Alerter {
         Project project = projectService.findByIdProject(idProject);
         String Message = message + "\n" + alertPath;
         List<People> people = List.of(peopleService.getById(id));
-        typeToAlert(alertType, project, message, people);
+        typeToAlert(alertType, project, Message, people);
     }
+
     public void sendAlert(int idProject,
                           String alertType,
                           String message,
@@ -65,7 +58,7 @@ public class Alerter {
         for (var i : peopleInProjectList){
             people.add(this.peopleService.getById(i.getPeopleInProjectId().getIdPeople()));
         }
-        typeToAlert(alertType, project, message, people);
+        typeToAlert(alertType, project, Message, people);
     }
 
     public void typeToAlert(String alertType, Project project,
@@ -109,6 +102,7 @@ public class Alerter {
 
         telegramAlert.sendMessage(project.getId(), message);
     }
+
     public void TelegramInfoAlert(Project project,
                               String message) throws Exception {
         telegramAlert.sendMessage(project.getId(), message);
