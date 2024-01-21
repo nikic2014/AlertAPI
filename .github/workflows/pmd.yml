@@ -17,7 +17,7 @@ jobs:
       uses: actions/setup-java@v2
       with:
         distribution: 'adopt'
-        java-version: '11' # Можете изменить на версию JDK, которую используете
+        java-version: '17'
 
     - name: Build and Run PMD
       run: |
